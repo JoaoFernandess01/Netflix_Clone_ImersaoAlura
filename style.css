@@ -1,0 +1,124 @@
+body { /* fundo da página */
+    background-color: #000; /* cor de fundo preto Netflix */
+    color: #fff; /* texto branco */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* fonte padrão */
+    margin: 0; /* sem margem */
+    padding: 0; /* sem padding */
+    display: flex; /* centraliza conteúdo */
+    justify-content: center; /* centraliza horizontal */
+    align-items: center; /* centraliza vertical */
+    min-height: 100vh; /* ocupa altura total da viewport */
+}
+
+main { /* container principal */
+    text-align: center; /* texto centralizado */
+    max-width: 900px; /* largura máxima */
+    width: 100%; /* ocupa 100% do pai */
+}
+
+h1 { /* título principal */
+    font-size: 4rem; /* tamanho grande */
+    margin-bottom: 2rem; /* espaçamento abaixo */
+    font-weight: 400; /* peso normal */
+}
+
+nav { /* bloco de navegação de perfis */
+    display: flex; /* usa flexbox */
+    justify-content: center; /* centraliza */
+}
+
+.profiles { /* lista de perfis */
+    display: flex; /* linha de itens */
+    flex-wrap: nowrap; /* não quebra em desktop */
+    justify-content: center; /* centraliza */
+    gap: 20px; /* espaçamento uniforme */
+    width: 100%; /* ocupa 100% do main */
+    max-width: 900px; /* limite de largura */
+    margin: 0 auto; /* centraliza bloco */
+}
+
+.profile { /* bloco de cada perfil */
+    text-align: center; /* centraliza conteúdo */
+    cursor: pointer; /* indica clique */
+    width: 160px; /* largura base de perfil */
+    display: flex; /* flex interno */
+    flex-direction: column; /* empilha vertical */
+    align-items: center; /* centraliza conteúdo */
+}
+
+.profile img { /* imagem do perfil */
+    width: 100%; /* largura adaptativa */
+    height: auto; /* mantém proporção */
+    border-radius: 7px; /* cantos arredondados */
+    object-fit: cover; /* recorta corretamente */
+    border: 3px solid transparent; /* borda por padrão transparente */
+    transition: border-color 0.3s ease; /* animação borda */
+}
+
+.profile:hover img { /* efeito hover */
+    border-color: #fff; /* borda branca no hover */
+}
+
+figcaption { /* texto do nome do perfil */
+    margin-top: 0.5rem; /* espaçamento acima */
+    font-size: 1.5rem; /* tamanho texto */
+    font-weight: 300; /* peso leve */
+    color: #ccc; /* cinza claro */
+}
+
+/* Estilos para modo claro */
+.light-mode body { /* fundo da página no modo claro */
+    background-color: #fff !important; /* fundo branco */
+    color: #000 !important; /* texto preto */
+}
+
+.light-mode h1 { /* título no modo claro */
+    color: #000 !important; /* texto preto */
+}
+
+.light-mode figcaption { /* texto no modo claro */
+    color: #666 !important; /* cinza escuro */
+}
+
+.light-mode .profile:hover img { /* hover no modo claro */
+    border-color: #000 !important; /* borda preta */
+}
+
+#theme-toggle { /* botão de alternância */
+    position: fixed; /* posicionamento fixo */
+    top: 20px; /* 20px do topo */
+    right: 20px; /* 20px da direita */
+    width: 60px; /* largura */
+    height: 30px; /* altura */
+    background: #333; /* fundo escuro */
+    border: none; /* sem borda */
+    border-radius: 15px; /* cantos arredondados */
+    cursor: pointer; /* cursor pointer */
+    transition: background 0.3s; /* transição */
+    z-index: 1000; /* acima de outros elementos */
+}
+
+#theme-toggle::before { /* pseudo-elemento para o interruptor */
+    content: ''; /* conteúdo vazio */
+    position: absolute; /* absoluto */
+    top: 3px; /* 3px do topo */
+    left: 3px; /* 3px da esquerda */
+    width: 24px; /* largura */
+    height: 24px; /* altura */
+    background: #fff; /* fundo branco */
+    border-radius: 50%; /* circular */
+    transition: transform 0.3s; /* transição de movimento */
+}
+
+.light-mode #theme-toggle { /* botão no modo claro */
+    background: #ddd; /* fundo claro */
+}
+
+.light-mode #theme-toggle::before { /* interruptor no modo claro */
+    transform: translateX(30px); /* move para direita */
+}
+
+a{
+    text-decoration: none; /* remove sublinhado */
+    color: inherit; /* herda cor do texto */
+}
